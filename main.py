@@ -1,15 +1,8 @@
-from gsa_rate import GsaRate
-from expense_data import ExpenseData
+from expense_report import ExpenseReport
 
 def main():
-	expense_report = ExpenseData('activity.csv')
-
-	print(expense_report.start_date, expense_report.end_date)
-
-	for date in expense_report.expenses_by_day:
-		print(f'{date}: {expense_report.expenses_by_day[date]:.2f}')
-
-	print(f'Total: {expense_report.expenses_total:.2f}')	
+	expense_report = ExpenseReport('activity.csv', 'VA')
+	expense_report.print_report()
 
 if __name__ == "__main__":
 	main()
